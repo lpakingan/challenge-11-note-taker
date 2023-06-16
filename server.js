@@ -1,12 +1,12 @@
 // packages required for running the note taker app
 const express = require('express');
-const html = require('/routes/html_routes.js');
-const api = require('/routes/api_routes.js');
+const html = require('./routes/html_routes.js');
+const api = require('./routes/api_routes.js');
 
 const app = express();
 
 // specified port for running server.js
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3111;
 
 // middleware for parsing the JSON and urlencoded data
 app.use(express.json());

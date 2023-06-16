@@ -4,7 +4,7 @@ const { v4: uuidv4 } = require('uuid');
 notesRouter = require('express').Router();
 
 // get all saved notes in JSON format from db.json
-notesRouter.get('/api/reviews', (req, res) => {
+notesRouter.get('/api/notes', (req, res) => {
     fs.readFile('../db/db.json', 'utf8', (error, notes) => {
         if (error) {
             console.error(error);
@@ -17,7 +17,7 @@ notesRouter.get('/api/reviews', (req, res) => {
 
 
 // add a new note to db.json through the POST method
-notesRouter.post('/api/reviews', (req, res) => {
+notesRouter.post('/api/notes', (req, res) => {
     console.info('POST request received to add a note to your notes');
 
     // two inputs from user: note title and note content
