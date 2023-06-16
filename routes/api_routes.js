@@ -1,11 +1,12 @@
+// packages required for api route
 const path = require('path');
 const fs = require('fs');
 const { v4: uuidv4 } = require('uuid');
 notesRouter = require('express').Router();
 
 // get all saved notes in JSON format from db.json
-notesRouter.get('/api/notes', (req, res) => {
-    fs.readFile('../db/db.json', 'utf8', (error, notes) => {
+notesRouter.get('/notes', (req, res) => {
+    fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (error, notes) => {
         if (error) {
             console.error(error);
         } else {
@@ -17,7 +18,7 @@ notesRouter.get('/api/notes', (req, res) => {
 
 
 // add a new note to db.json through the POST method
-notesRouter.post('/api/notes', (req, res) => {
+notesRouter.post('/notes', (req, res) => {
     console.info('POST request received to add a note to your notes');
 
     // two inputs from user: note title and note content
@@ -33,7 +34,7 @@ notesRouter.post('/api/notes', (req, res) => {
         };
 
     // read the existing notes from the db.json file that stores them
-    fs.readFile('../db/db.json', 'utf8', (error, storedNotes) => {
+    fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (error, storedNotes) => {
         // if there is an error, throw an error to the user
         if (error) {
             console.error(error);
@@ -43,7 +44,7 @@ notesRouter.post('/api/notes', (req, res) => {
 
             notesStorage.push(newNote);
 
-            fs.writeFile('../db/db.json', JSON.stringify(notesStorage, null), (error) => 
+            fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(notesStorage, null), (error) => 
             error ? console.error(error) : console.info('Added note!')
             );
 
