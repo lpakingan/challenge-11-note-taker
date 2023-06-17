@@ -28,9 +28,9 @@ notesRouter.post('/notes', (req, res) => {
     // on top of user input, a unique ID is generated for the new Note
     if (noteTitle && noteContent) {
         const newNote = {
-            noteID: uuidv4(),
             noteTitle,
-            noteContent
+            noteContent,
+            noteID: uuidv4()
         };
 
     // read the existing notes from the db.json file that stores them
