@@ -22,14 +22,14 @@ notesRouter.post('/notes', (req, res) => {
     console.info('POST request received to add a note to your notes');
 
     // two inputs from user: note title and note content
-    const { noteTitle, noteContent } = req.body;
+    const { title, text } = req.body;
 
     // if inputs received, create newNote constant to add to db.json
     // on top of user input, a unique ID is generated for the new Note
-    if (noteTitle && noteContent) {
+    if (title && text) {
         const newNote = {
-            noteTitle,
-            noteContent,
+            title,
+            text,
             noteID: uuidv4()
         };
 
