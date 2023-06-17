@@ -55,4 +55,5 @@ notesRouter.post('/notes', (req, res) => {
     };
 });
 
+// export the api router
 module.exports = notesRouter;
