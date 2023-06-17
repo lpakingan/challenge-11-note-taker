@@ -6,12 +6,14 @@ notesRouter = require('express').Router();
 
 // get all saved notes in JSON format from db.json
 notesRouter.get('/notes', (req, res) => {
+    console.info('GET request received to load your saved notes');
     fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (error, notes) => {
         if (error) {
             console.error(error);
         } else {
             storedNotes = JSON.parse(notes);
             res.json(storedNotes);
+            console.info('Notes loaded successfully!')
         }
     });
 });
@@ -45,7 +47,7 @@ notesRouter.post('/notes', (req, res) => {
             notesStorage.push(newNote);
 
             fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(notesStorage, null), (error) => 
-            error ? console.error(error) : console.info('Added note!')
+            error ? console.error(error) : console.info(`Successfully added note!\nID: ${newNote.id}\nTitle: ${newNote.title}\nText: ${newNote.text}`)
             );
 
             res.json(notesStorage);

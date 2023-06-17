@@ -17,6 +17,11 @@ app.use(express.static('public'));
 app.use('/', html);
 app.use('/api', api);
 
+// add get method for * to call index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'))
+});
+
 // specifies that the app is launched at the specified port
 app.listen(PORT, () =>
   console.log(`App listening at PORT ${PORT}!`)
