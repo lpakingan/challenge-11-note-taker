@@ -30,7 +30,7 @@ notesRouter.post('/notes', (req, res) => {
         const newNote = {
             title,
             text,
-            noteID: uuidv4()
+            id: uuidv4()
         };
 
     // read the existing notes from the db.json file that stores them
