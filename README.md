@@ -26,8 +26,9 @@ For this application, no installation is necessary if accessing through the Hero
 If run from the terminal command line, **node.js** is necessary for running the application locally. The **express** package for node is also required and can be installed using the npm installer.
 
 ## Usage
-To use the application, either access it through the Heroku link or run locally using node.js. When on the notes page, the user is able to add new notes and see their already stored notes upon loading in. If the user would like to remove notes,
-they may do so by clicking the Trash icon next to any saved note. The saved notes will be dynamically updated upon each post/delete request by the user. 
+To use the application, either access it through the Heroku link or run locally using node.js. When on the notes page, the user is able to add new notes and see their already stored notes upon loading in. If the user would like to remove notes, they may do so by clicking the Trash icon next to any saved note. The saved notes will be dynamically updated upon each post/delete request by the user. 
+
+![](https://github.com/lpakingan/challenge-11-note-taker/blob/main/assets/notetaker-demo.gif)
 
 ## Resources Used
 - W3Schools
