@@ -24,5 +24,5 @@ app.get('*', (req, res) => {
 
 // specifies that the app is launched at the specified port
 app.listen(PORT, () =>
-  console.log(`App listening at PORT ${PORT}!`)
+  console.log(`App listening at PORT ${PORT}`)
 );
